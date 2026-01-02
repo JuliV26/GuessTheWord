@@ -20,26 +20,20 @@ public class Main {
         File file = new File("words.json");
 
         if (!file.exists()) {
-            try {
-                FileWriter writer = new FileWriter(file);
-
-                writer.write("{\n");
-                writer.write("  \"easy\": [\"java\", \"code\", \"game\",\"ai\",\"data\"],\n");
-                writer.write("  \"medium\": [\"computer\", \"developer\",\"mouse\",\"compiler\", \"keyboard\"],\n");
-                writer.write("  \"hard\": [\"programming\", \"architecture\",\"recursion\",\"variable\", \"inheritance\"],\n");
-                writer.write("  \"insane\": [\n");
-                writer.write("    \"object oriented programming\",\n");
-                writer.write("    \"design patterns\",\n");
-                writer.write("    \"machine learning\"\n");
-                writer.write("    \"artificial intelligence\"\n");
-                writer.write("    \"software engineering\"\n");
-                writer.write("    \"internet of things\"\n");
-                writer.write("  ]\n");
-                writer.write("}");
-
-                writer.close();
-
-
+            try (FileWriter writer = new FileWriter(file)) {
+                Map<String, List<String>> words = new LinkedHashMap<>();
+                words.put("EASY", Arrays.asList("java", "code", "game", "ai", "data"));
+                words.put("MEDIUM", Arrays.asList("computer", "developer", "mouse", "compiler", "keyboard"));
+                words.put("HARD", Arrays.asList("programming", "architecture", "recursion", "variable", "inheritance"));
+                words.put("INSANE", Arrays.asList(
+                        "object oriented programming",
+                        "design patterns",
+                        "machine learning",
+                        "artificial intelligence",
+                        "software engineering",
+                        "internet of things"
+                ));
+                gson.toJson(words, writer);
             } catch (Exception e) {
                 System.out.println("Error creating the file!");
                 return;
