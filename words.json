@@ -1,11 +1,31 @@
 {
-  "EASY": ["java", "code", "game","ai","data"],
-  "MEDIUM": ["computer", "developer","mouse","compiler", "keyboard"],
-  "HARD": ["programming", "architecture","recursion","variable", "inheritance"],
-  "INSANE": [
-    "object oriented programming",
-    "design patterns",
-    "artificial intelligence","software engineering","internet of things"
-
-  ]
+    "EASY": [
+        "java",
+        "code",
+        "game",
+        "ai",
+        "data"
+    ],
+    "MEDIUM": [
+        "computer",
+        "developer",
+        "mouse",
+        "compiler",
+        "keyboard"
+    ],
+    "HARD": [
+        "programming",
+        "architecture",
+        "recursion",
+        "variable",
+        "inheritance"
+    ],
+    "INSANE": [
+        "object oriented programming",
+        "design patterns",
+        "machine learning",
+        "artificial intelligence",
+        "software engineering",
+        "internet of things"
+    ]
 }
